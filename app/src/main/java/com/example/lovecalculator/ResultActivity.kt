@@ -11,8 +11,10 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var result = intent.getSerializableExtra("data") as LoveModel
+        binding.firstNameTv.text = intent.getStringExtra("first name")
+        binding.secondNameTv.text = intent.getStringExtra("second name")
+        binding.resultScoreTv.text = intent.getStringExtra("result")
+        binding.resultTv.text = intent.getStringExtra("percentage")
 
-        binding.tvResult.text = result.toString()
     }
 }
