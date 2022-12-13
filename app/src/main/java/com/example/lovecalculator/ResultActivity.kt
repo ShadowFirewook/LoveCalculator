@@ -11,10 +11,6 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.firstNameTv.text = intent.getStringExtra("first name")
-        binding.secondNameTv.text = intent.getStringExtra("second name")
-        binding.resultScoreTv.text = intent.getStringExtra("result")
-        binding.resultTv.text = intent.getStringExtra("percentage")
 
     }
 }
