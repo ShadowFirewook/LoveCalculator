@@ -32,16 +32,13 @@ class ResultFragment : Fragment() {
         binding.secondNameTv.text = loveHistory.secondName
         binding.resultScoreTv.text = loveHistory.result
         binding.resultTv.text = loveHistory.percentage
-        val love = LoveModel(
-            firstName = binding.firstNameTv.text.toString(),
-            secondName = binding.secondNameTv.text.toString(),
-            percentage = binding.resultScoreTv.text.toString(),
-            result = binding.resultTv.text.toString(),
-            id
-        )
-        App.appDatabase.loveDao().insert(love)
+        App.appDatabase.loveDao().insert(loveHistory)
         binding.loveCalculatorResultHistoryIv.setOnClickListener {
             findNavController().navigate(R.id.fragment_history)
+
+        }
+        binding.tryAgainBtn.setOnClickListener{
+            findNavController().navigate(R.id.mainFragment)
         }
     }
 
